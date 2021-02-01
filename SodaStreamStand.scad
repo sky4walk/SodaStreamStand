@@ -5,7 +5,7 @@
 
 WandD       =   3;
 BodenH      =   5;
-SodaBottleD =  60.5;
+SodaBottleD =  61;
 SodaBottleH = 370;
 SodaStandH  = SodaBottleH / 4;
 
@@ -34,5 +34,8 @@ difference() {
     translate([0,0,-1])
         cylinder(h=SodaStandH+2, r1=SodaBottleD/2, r2=SodaBottleD/2, center=false);
 }
-
-cylinder(h=BodenH, r1=SodaBottleD+WandD/2, r2=SodaBottleD+WandD/2, center=false);
+difference() {
+    cylinder(h=BodenH, r1=SodaBottleD+WandD/2, r2=SodaBottleD+WandD/2, center=false);
+    translate([0,0,-1])
+        cylinder(h=BodenH+2, r1=WandD, r2=WandD, center=false);
+}
